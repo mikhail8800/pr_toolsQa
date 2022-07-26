@@ -1,9 +1,11 @@
 package pages;
 
 import config.BaseConfigPage;
+import helpers.Navigation;
 import org.checkerframework.checker.fenum.qual.Fenum;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class RegistrationPage extends BaseConfigPage {
 
@@ -105,8 +107,23 @@ public class RegistrationPage extends BaseConfigPage {
     private WebElement regButtonSubmit;
 
     /**
-     * Элемент прикрепления файла
+     * Элемент загрузки файла
      */
+    @FindBy (xpath = "//input[@id='uploadPicture']")
+    private WebElement regUploadPicture;
+
+    public RegistrationPage(){
+        PageFactory.initElements(driver,this);
+    }
+
+
+    public RegistrationPage fillRegistrationForm(){
+        
+
+
+
+    }
+
 
 
 }
