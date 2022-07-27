@@ -1,5 +1,6 @@
 package pages;
 
+import helpers.TestValues;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import config.BaseConfigPage;
@@ -10,20 +11,20 @@ public class HomePage extends BaseConfigPage{
     /**
      * Раздел "Элементы"
      */
-    @FindBy (xpath = "//div[@class='card-body']/h5[contains(text(),'Elements')]")
-    private WebElement buttonElements;
+    @FindBy (xpath = "//div[@class='card-body']/h5[contains(text(),'Elements')]/..")
+    public WebElement buttonElements;
 
     /**
      * Раздел "Формы"
      */
 
-    @FindBy (xpath = "//div[@class='card-body']/h5[contains(text(),'Forms')]")
-    private WebElement buttonForms;
+    @FindBy (xpath = "//div[@class='card-body']/h5[contains(text(),'Forms')]/ancestor::div[@class='card mt-4 top-card']")
+    public WebElement buttonForms;
 
 
     public HomePage() {
         try {
-            driver.get("//https://demoqa.com/");
+            driver.get(TestValues.BASE_URL);
 
         }catch (Exception e){
             System.out.println("URL не найден");
